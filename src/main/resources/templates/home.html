@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html  xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>CAR CATALOG</h1>
+    <tr th:if="${cars.empty}">
+    <td colspan="2"> No Books Available </td>
+    </tr>
+
+    <p>ID    MARK    MODEL</p>
+<tr th:each="car: ${cars}">
+    <td th:text="${car.getId()}"/> -
+    <td th:text="${car.getMark()}"/>
+    <td th:text="${car.getModel()}"/><br>
+    <p>----------------------------</p>
+</tr>
+
+
+    <form th:action="@{/to-add}" method="get">
+        <p> <input type="submit" value="Add Car"></p>
+    </form>
+    <form th:action="@{/to-update}" method="get">
+        <p> <input type="submit" value="Update Car"></p>
+    </form>
+    <form th:action="@{/to-delete}" method="get">
+        <p> <input type="submit" value="Delete Car"></p>
+    </form>
+
+</body>
+
+</html>
