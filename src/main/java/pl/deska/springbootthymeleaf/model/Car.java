@@ -71,6 +71,6 @@ public class Car {
 
     @Override
     public int hashCode() {
-        return Objects.hash(mark, model);
+        return Objects.hash(id, mark, model);
     }
 }
